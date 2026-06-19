@@ -133,10 +133,10 @@ Las métricas siguientes se calculan **únicamente a partir de sesiones incluida
 ### Adherencia al entrenamiento
 
 - **Meta diaria**: 6 sesiones con sensor por día activo (constante `DAILY_SESSION_GOAL` en el código; orientada al seguimiento postoperatorio).
-- **Días con entrenamiento completo**: porcentaje y conteo de días que alcanzan la meta diaria.
+- **Días con entrenamiento completo**: porcentaje y conteo de días con al menos 6 sesiones **completadas** (`completed: true`; criterio `completedCount >= 6` en el código).
 - **Días con entrenamiento perfecto**: porcentaje y conteo de días con 6/6 sesiones perfectas.
 - **Promedio de sesiones por día activo**.
-- **Mejor racha de adherencia** y **racha actual** (días consecutivos cumpliendo 6/6).
+- **Mejor racha de adherencia** y **racha actual** (días consecutivos con al menos 6 sesiones completadas por día; `completedCount >= 6`).
 - **Días con interrupciones**: porcentaje de días con al menos una sesión interrumpida.
 - **Resumen interpretativo de adherencia**: textos orientativos generados por reglas programadas (p. ej. constancia, días incompletos); no constituyen recomendación clínica.
 
@@ -218,6 +218,7 @@ El comando `build` produce artefactos estáticos; **no implica** un despliegue c
 
 ```
 respira-doctor-dashboard/
+├── docs/                   # Documentación especializada
 ├── public/                 # Recursos estáticos (p. ej. iconos)
 ├── src/
 │   ├── components/         # Interfaz: carga de archivos, dashboard, KPIs, tablas, gráficas

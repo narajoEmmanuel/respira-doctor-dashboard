@@ -33,8 +33,8 @@ Esta regla es un **filtro técnico de datos exportados**, no una validación cl�
 Constante `DAILY_SESSION_GOAL = 6` (`src/types/adherence.ts`):
 
 - **6 sesiones con sensor por día activo**, alineada en la interfaz con seguimiento **postoperatorio**.
-- Un **día completo** cumple la meta de 6 sesiones incluidas en ese día calendario.
-- Un **día perfecto** cumple 6/6 sesiones marcadas como `perfect: true` en los datos exportados.
+- Un **día completo** registra al menos 6 sesiones **completadas** (`completed: true`) en ese día calendario (criterio `completedCount >= 6` en `adherenceMetrics.ts`); no basta con contar 6 sesiones incluidas si no están marcadas como completadas.
+- Un **día perfecto** cumple al menos 6 sesiones marcadas como `perfect: true` en los datos exportados (criterio `perfectCount >= 6`).
 
 La meta semanal agregada en vista *Días de la semana* es **42 sesiones** (6 × 7 días), según `TemporalChartsGrid`.
 
@@ -46,7 +46,7 @@ Componentes: `AdherenceKpis`, `AdherenceSummary`. Cálculo: `computeAdherenceMet
 
 | Indicador | Descripción |
 |-----------|-------------|
-| **Días con entrenamiento completo** | Porcentaje y conteo de días activos con ≥ 6 sesiones incluidas. |
+| **Días con entrenamiento completo** | Porcentaje y conteo de días activos con ≥ 6 sesiones completadas (`completed: true`; `completedCount >= 6`). |
 | **Días con entrenamiento perfecto** | Porcentaje y conteo de días con 6/6 sesiones perfectas. |
 | **Promedio sesiones / día activo** | Media de sesiones incluidas en días con al menos una sesión. |
 | **Mejor racha de adherencia** | Máximo de días consecutivos cumpliendo 6/6 sesiones completas. |
