@@ -10,6 +10,18 @@ Todo el procesamiento ocurre **en el dispositivo del usuario**: no hay backend, 
 
 ---
 
+## Documentación adicional
+
+Documentación especializada en la carpeta [`docs/`](./docs/):
+
+- [Índice de documentación](./docs/README.md)
+- [Formato de exportación JSON](./docs/formato-exportacion.md)
+- [Métricas y vistas](./docs/metricas-y-vistas.md)
+- [Descargo y límites](./docs/descargo-y-limites.md)
+- [Guía para desarrolladores](./docs/guia-desarrollador.md)
+
+---
+
 ## Relación con RESPIRA+
 
 RESPIRA+ es un proyecto orientado al **seguimiento de pacientes adultos en contexto postoperatorio** mediante ejercicios respiratorios asociados a un espirómetro incentivador y registro de sesiones en la aplicación móvil. Cuando el paciente o el equipo asistencial genera una **exportación JSON** desde la app, el profesional puede cargar ese archivo en este dashboard para obtener una vista consolidada de los datos exportados.
